@@ -29,3 +29,17 @@ app.include_router(user.router)
 @app.get("/")
 def read_root():
     return {"message": "Welcome to EDUTRACK API"}
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "Backend working"}
+
+@app.get("/jobs")
+def get_jobs():
+    return [
+        {"title": "Software Engineer"},
+        {"title": "Data Analyst"}
+    ]
