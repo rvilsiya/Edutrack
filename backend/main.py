@@ -5,14 +5,14 @@ app = FastAPI(title="EDUTRACK API")
 
 # Setup CORS
 origins = [
-    "http://localhost",
-    "http://localhost:5173", # Vite default port
+    "https://edutrack-psi-nine.vercel.app",
+    "https://localhost:3000", # Vite default port
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
+    allow_origins=origins,
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
